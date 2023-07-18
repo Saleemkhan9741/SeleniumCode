@@ -11,7 +11,7 @@ import java.util.List;
 
 public class AmazonHomeTest extends BaseTest {
 
-    @Test
+    @Test(groups = {"regression"})
     public void Test1(){
         System.out.println("Running test 1");
         WebDriver currentDriver = Driver.getInstance().getWebdriver();

@@ -31,8 +31,8 @@ public class DriverManager {
         return driverManager;
     }
 
-    public void setUpDriver(){
-        String browser = PropertyReader.getInstance().getConfigPropertyForGivenKey(Constants.BROWSER.getProperty());
+    public void setUpDriver(String browser){
+//        browser = PropertyReader.getInstance().getConfigPropertyForGivenKey(Constants.BROWSER.getProperty());
         String url = PropertyReader.getInstance().getPropertyForGivenKey(Constants.URL.getProperty());
         boolean headless = Boolean.parseBoolean(PropertyReader
                 .getInstance().getConfigPropertyForGivenKey(Constants.HEADLESS.getProperty()));
