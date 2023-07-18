@@ -3,7 +3,7 @@
 <suite name="selenium">
     <groups>
         <run>
-            <include name="sanity"/>
+            <include name="smoke"/>
         </run>
     </groups>
     <listeners>
@@ -17,7 +17,7 @@
 
     <test name="hyrtutorials">
         <classes>
-            <class name="org.selenium.hyrtutorials.frames.HyrTutorialsTest"/>
+            <class name="org.selenium.hyrtutorials.frames.SwitchToParticularTab"/>
         </classes>
     </test>
 </suite>
