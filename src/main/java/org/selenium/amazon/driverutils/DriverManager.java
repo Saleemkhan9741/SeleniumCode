@@ -30,19 +30,17 @@ public class DriverManager {
         return driverManager;
     }
 
-    public void setUpDriver(String browser){
+    public void setUpDriver(String browser, boolean headlessEnabled){
         String url = PropertyReader.getInstance().getPropertyForGivenKey(Constants.URL.getProperty());
-        boolean headless = Boolean.parseBoolean(PropertyReader
-                .getInstance().getConfigPropertyForGivenKey(Constants.HEADLESS.getProperty()));
         LOGGER.info("Browser is set as {}",browser);
         LOGGER.info("URL is set as {}",url);
-        LOGGER.info("headless is set as {}",headless);
+        LOGGER.info("headless is set as {}",headlessEnabled);
         switch (Browsers.valueOf(browser.toUpperCase())){
             case CHROME -> {
                 WebDriverManager.chromedriver().setup();
                 WebDriver driver;
                 ChromeOptions chromeOptions = null;
-                if(headless) {
+                if(headlessEnabled) {
                     chromeOptions = new ChromeOptions();
                     chromeOptions.addArguments("--headless");
                     driver = new ChromeDriver(chromeOptions);
@@ -56,7 +54,7 @@ public class DriverManager {
                 WebDriverManager.firefoxdriver().setup();
                 WebDriver driver;
                 FirefoxOptions firefoxOptions = null;
-                if(headless) {
+                if(headlessEnabled) {
                     firefoxOptions = new FirefoxOptions();
                     firefoxOptions.addArguments("--headless");
                     driver = new FirefoxDriver(firefoxOptions);
