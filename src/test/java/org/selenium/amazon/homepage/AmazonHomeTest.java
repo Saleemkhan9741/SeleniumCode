@@ -10,11 +10,7 @@ import org.selenium.amazon.pages.PasswordLoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.Arrays;
-
 public class AmazonHomeTest extends BaseTest {
-
-    private static final Logger LOGGER = LogManager.getLogger(AmazonHomeTest.class);
 
     @Test(groups = {"regression"})
     public void loginToAmazon(){
@@ -31,7 +27,6 @@ public class AmazonHomeTest extends BaseTest {
 
     @Test(groups = {"regression"})
     public void validateNumberOfItemsInCart(){
-        System.out.println("Running test " + Arrays.stream(getClass().getMethods()).findFirst().get().getName());
         AmazonHomePage amazonHomePage = new AmazonHomePage();
         CartPage cartPage = new CartPage();
         amazonHomePage.clickOnCartIcon();

@@ -6,6 +6,9 @@
             <include name="regression"/>
         </run>
     </groups>
+    <listeners>
+        <listener class-name="org.selenium.amazon.report.listener.TestListener"/>
+    </listeners>
     <test name="regression">
         <classes>
             <class name="org.selenium.amazon.homepage.AmazonHomeTest"/>

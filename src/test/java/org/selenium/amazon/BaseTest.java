@@ -1,8 +1,11 @@
 package org.selenium.amazon;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.Status;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.selenium.amazon.driverutils.DriverManager;
+import org.selenium.amazon.report.ExtentReportManager;
 import org.selenium.amazon.utils.PropertyReader;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
@@ -23,9 +26,7 @@ public class BaseTest {
 
     @AfterMethod(groups = {"regression","smoke","sanity"})
     public void afterTest(ITestResult result){
-        if(result.isSuccess()){
-            System.out.println(result.getMethod().getMethodName()+"is a pass");
-        }
+
     }
 
     @AfterSuite(groups = {"regression","smoke","sanity"})
