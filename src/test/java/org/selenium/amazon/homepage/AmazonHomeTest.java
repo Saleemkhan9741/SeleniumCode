@@ -21,9 +21,9 @@ public class AmazonHomeTest extends BaseTest {
         PasswordLoginPage passwordLoginPage = new PasswordLoginPage();
         amazonHomePage.moveToHelloSignInAccount();
         amazonHomePage.clickOnHelloSignInAccount();
-        emailOrPhoneLoginPage.enteringMobileOrEmailId(System.getProperty("AMAZON_USERNAME"));
+        emailOrPhoneLoginPage.enteringMobileOrEmailId(System.getenv("AMAZON_USERNAME"));
         emailOrPhoneLoginPage.clickOnContinueButton();
-        passwordLoginPage.enterPassword(System.getProperty("AMAZON_PASSWORD"));
+        passwordLoginPage.enterPassword(System.getenv("AMAZON_PASSWORD"));
         passwordLoginPage.clickOnSignInButton();
     }
 

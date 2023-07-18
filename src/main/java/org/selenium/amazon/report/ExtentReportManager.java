@@ -16,8 +16,4 @@ public class ExtentReportManager {
         extentReports.attachReporter(extentSparkReporter);
         return extentReports;
     }
-
-    public static void main(String[] args) {
-        System.out.println(System.getenv("AMAZON_USERNAME"));
-    }
 }
