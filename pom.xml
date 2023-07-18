@@ -88,8 +88,9 @@
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>3.1.2</version>
                     <configuration>
+                        <reportsDirectory>./test-output</reportsDirectory>
                         <suiteXmlFiles>
-                            <suiteXmlFile>testng.xml</suiteXmlFile>
+                            <suiteXmlFile>testng.xml</suiteXmlFile>B
                         </suiteXmlFiles>
                         <systemPropertyVariables>
                             <propertyName>{$browser}</propertyName>
