@@ -1,12 +1,8 @@
 package org.selenium.amazon.report;
 
 import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
-
-import java.io.File;
 
 public class ExtentReportManager {
 
@@ -22,9 +18,6 @@ public class ExtentReportManager {
     }
 
     public static void main(String[] args) {
-        ExtentReports extent = createExtentReportInstance();
-        extent.createTest("My First test")
-                .log(Status.PASS, "Test is a Pass");
-        extent.flush();
+        System.out.println(System.getenv("AMAZON_USERNAME"));
     }
 }

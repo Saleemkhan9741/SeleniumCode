@@ -12,6 +12,8 @@ import org.testng.annotations.Test;
 
 public class AmazonHomeTest extends BaseTest {
 
+    private static final Logger LOGGER = LogManager.getLogger(AmazonHomeTest.class);
+
     @Test(groups = {"regression"})
     public void loginToAmazon(){
         AmazonHomePage amazonHomePage = new AmazonHomePage();
@@ -19,9 +21,9 @@ public class AmazonHomeTest extends BaseTest {
         PasswordLoginPage passwordLoginPage = new PasswordLoginPage();
         amazonHomePage.moveToHelloSignInAccount();
         amazonHomePage.clickOnHelloSignInAccount();
-        emailOrPhoneLoginPage.enteringMobileOrEmailId("saleemkhan9741@gmail.com");
+        emailOrPhoneLoginPage.enteringMobileOrEmailId(System.getProperty("AMAZON_USERNAME"));
         emailOrPhoneLoginPage.clickOnContinueButton();
-        passwordLoginPage.enterPassword("Saleemmulla@123");
+        passwordLoginPage.enterPassword(System.getProperty("AMAZON_PASSWORD"));
         passwordLoginPage.clickOnSignInButton();
     }
 
