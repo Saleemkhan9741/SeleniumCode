@@ -1,23 +1,25 @@
 package org.selenium.amazon.homepage;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.selenium.amazon.BaseTest;
-import org.selenium.amazon.driverutils.Driver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.List;
+import java.util.Arrays;
 
-public class AmazonHomeTest extends BaseTest {
+public class AmazonHomeTest extends BaseTest{
 
     @Test(groups = {"regression"})
-    public void Test1(){
-        System.out.println("Running test 1");
-        WebDriver currentDriver = Driver.getInstance().getWebdriver();
-        List<WebElement> links = currentDriver.findElements(By.xpath("//a"));
-        links.forEach(x->{
-            System.out.println(x.getText());
-        });
+    public void loginToAmazon(){
+        amazonHomePage.clickOnHelloSignInAccount();
+        emailOrPhoneLoginPage.enteringMobileOrEmailId("saleemkhan9741@gmail.com");
+        passwordLoginPage.enterPassword("Saleemmulla@123");
+    }
+
+    @Test(groups = {"regression"})
+    public void validateNumberOfItemsInCart(){
+        System.out.println("Running test " + Arrays.stream(getClass().getMethods()).findFirst().get().getName());
+        amazonHomePage.clickOnCartIcon();
+        int activeCartSize = cartPage.getActiveItemsListSize();
+        Assert.assertEquals(activeCartSize,2);
     }
 }

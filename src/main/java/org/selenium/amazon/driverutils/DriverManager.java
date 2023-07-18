@@ -84,7 +84,9 @@ public class DriverManager {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.of(2, ChronoUnit.SECONDS));
         driver.manage().deleteAllCookies();
-        driver.get(url);
+        if(browser.equals(Browsers.SAFARI.name())){
+            driver.navigate().to(url);
+        }else driver.get(url);
         Driver.getInstance().setDriver(driver);
     }
 

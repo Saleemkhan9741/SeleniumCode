@@ -3,11 +3,12 @@ package org.selenium.amazon;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.selenium.amazon.driverutils.DriverManager;
+import org.selenium.amazon.homepage.BaseClass;
 import org.selenium.amazon.utils.PropertyReader;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
-public class BaseTest {
+public class BaseTest extends BaseClass {
 
     private static final Logger LOGGER = LogManager.getLogger(BaseTest.class);
 
