@@ -6,7 +6,7 @@
             <include name="regression"/>
         </run>
     </groups>
-    <parameter name="browser" value="chrome"/>
+    <parameter name="browser" value="$browser"/>
     <test name="regression">
         <classes>
             <class name="org.selenium.amazon.homepage.AmazonHomeTest"/>
