@@ -95,7 +95,7 @@
                         <systemPropertyVariables>
                             <propertyName>{$browser}</propertyName>
                             <propertyName>{$env}</propertyName>
-                            <propertyName>{headlessEnabled}</propertyName>
+                            <propertyName>{$headlessEnabled}</propertyName>
                         </systemPropertyVariables>
                     </configuration>
                 </plugin>

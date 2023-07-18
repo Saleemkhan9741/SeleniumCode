@@ -1,9 +1,10 @@
-package org.selenium.amazon.pages;
+package org.selenium.amazon.pages.amazon;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.selenium.amazon.pages.PageInitializer;
 
-public class PasswordLoginPage extends PageInitializer{
+public class PasswordLoginPage extends PageInitializer {
 
     @FindBy(xpath = "//input[@id='ap_password']")
     private WebElement passwordTextField;

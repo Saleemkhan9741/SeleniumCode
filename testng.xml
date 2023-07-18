@@ -3,15 +3,21 @@
 <suite name="selenium">
     <groups>
         <run>
-            <include name="regression"/>
+            <include name="sanity"/>
         </run>
     </groups>
     <listeners>
         <listener class-name="org.selenium.amazon.report.listener.TestListener"/>
     </listeners>
-    <test name="regression">
+    <test name="amazon">
         <classes>
             <class name="org.selenium.amazon.homepage.AmazonHomeTest"/>
+        </classes>
+    </test>
+
+    <test name="hyrtutorials">
+        <classes>
+            <class name="org.selenium.hyrtutorials.frames.HyrTutorialsTest"/>
         </classes>
     </test>
 </suite>

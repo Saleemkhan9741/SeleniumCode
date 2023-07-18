@@ -1,9 +1,9 @@
 package org.selenium.amazon.homepage;
 
-import org.selenium.amazon.pages.AmazonHomePage;
-import org.selenium.amazon.pages.CartPage;
-import org.selenium.amazon.pages.EmailOrPhoneLoginPage;
-import org.selenium.amazon.pages.PasswordLoginPage;
+import org.selenium.amazon.pages.amazon.AmazonHomePage;
+import org.selenium.amazon.pages.amazon.CartPage;
+import org.selenium.amazon.pages.amazon.EmailOrPhoneLoginPage;
+import org.selenium.amazon.pages.amazon.PasswordLoginPage;
 
 public class BaseClass{
 

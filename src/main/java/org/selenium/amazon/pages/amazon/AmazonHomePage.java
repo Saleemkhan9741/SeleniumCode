@@ -1,9 +1,10 @@
-package org.selenium.amazon.pages;
+package org.selenium.amazon.pages.amazon;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.selenium.amazon.pages.PageInitializer;
 
-public class AmazonHomePage extends PageInitializer{
+public class AmazonHomePage extends PageInitializer {
 
     @FindBy(xpath = "//span[@class='nav-line-2 ']")
     private WebElement helloSignInAccount;

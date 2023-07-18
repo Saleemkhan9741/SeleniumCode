@@ -2,11 +2,11 @@ package org.selenium.amazon.homepage;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.selenium.amazon.BaseTest;
-import org.selenium.amazon.pages.AmazonHomePage;
-import org.selenium.amazon.pages.CartPage;
-import org.selenium.amazon.pages.EmailOrPhoneLoginPage;
-import org.selenium.amazon.pages.PasswordLoginPage;
+import org.selenium.BaseTest;
+import org.selenium.amazon.pages.amazon.AmazonHomePage;
+import org.selenium.amazon.pages.amazon.CartPage;
+import org.selenium.amazon.pages.amazon.EmailOrPhoneLoginPage;
+import org.selenium.amazon.pages.amazon.PasswordLoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -35,4 +35,7 @@ public class AmazonHomeTest extends BaseTest {
         int activeCartSize = cartPage.getActiveItemsListSize();
         Assert.assertEquals(activeCartSize,2);
     }
+
+
+
 }
