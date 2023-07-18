@@ -93,6 +93,7 @@
                         </suiteXmlFiles>
                         <systemPropertyVariables>
                             <propertyName>{$browser}</propertyName>
+                            <propertyName>{$env}</propertyName>
                         </systemPropertyVariables>
                     </configuration>
                 </plugin>

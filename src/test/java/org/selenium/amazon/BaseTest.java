@@ -3,6 +3,7 @@ package org.selenium.amazon;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.selenium.amazon.driverutils.DriverManager;
+import org.selenium.amazon.utils.PropertyReader;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
@@ -10,9 +11,12 @@ public class BaseTest {
 
     private static final Logger LOGGER = LogManager.getLogger(BaseTest.class);
 
-    @Parameters({"browser"})
+    @Parameters({"browser","env"})
     @BeforeSuite(groups = {"regression","smoke","sanity"})
-    public void setUp(String browser){
+    public void setUp(String browser, String env){
+        LOGGER.info("Setting the environment");
+        PropertyReader.environment = env;
+        LOGGER.info("Current environment is set to  :{}", env);
         LOGGER.info("Setting up the driver");
         DriverManager.getInstance().setUpDriver(browser);
     }

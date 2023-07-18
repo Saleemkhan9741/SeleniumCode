@@ -2,6 +2,7 @@ package org.selenium.amazon.utils;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.testng.annotations.Parameters;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -11,7 +12,7 @@ import java.util.Properties;
 public class PropertyReader {
 
     private static final Logger LOGGER = LogManager.getLogger(PropertyReader.class);
-    private final String environment = getConfigPropertyForGivenKey("environment");
+    public static String environment;
     private static PropertyReader propertyReader;
 
     public static PropertyReader getInstance(){
@@ -19,6 +20,10 @@ public class PropertyReader {
             propertyReader = new PropertyReader();
         }
         return propertyReader;
+    }
+
+    public PropertyReader(){
+
     }
 
     public String getConfigPropertyForGivenKey(String key){

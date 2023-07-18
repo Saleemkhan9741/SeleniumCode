@@ -20,7 +20,6 @@ import java.time.temporal.ChronoUnit;
 public class DriverManager {
 
     private static final Logger LOGGER = LogManager.getLogger(DriverManager.class);
-
     public ThreadLocal<WebDriver> threadLocalDriver = new ThreadLocal<>();
     private static DriverManager driverManager;
 
@@ -32,7 +31,6 @@ public class DriverManager {
     }
 
     public void setUpDriver(String browser){
-//        browser = PropertyReader.getInstance().getConfigPropertyForGivenKey(Constants.BROWSER.getProperty());
         String url = PropertyReader.getInstance().getPropertyForGivenKey(Constants.URL.getProperty());
         boolean headless = Boolean.parseBoolean(PropertyReader
                 .getInstance().getConfigPropertyForGivenKey(Constants.HEADLESS.getProperty()));
