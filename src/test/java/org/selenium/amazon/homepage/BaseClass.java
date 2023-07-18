@@ -5,7 +5,7 @@ import org.selenium.amazon.pages.CartPage;
 import org.selenium.amazon.pages.EmailOrPhoneLoginPage;
 import org.selenium.amazon.pages.PasswordLoginPage;
 
-public class BaseClass {
+public class BaseClass{
 
     public AmazonHomePage amazonHomePage;
     public CartPage cartPage;

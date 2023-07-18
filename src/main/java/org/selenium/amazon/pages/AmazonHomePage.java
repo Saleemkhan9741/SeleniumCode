@@ -11,12 +11,27 @@ public class AmazonHomePage extends PageInitializer{
     @FindBy(xpath = "//div[@id='nav-cart-text-container']")
     private WebElement cartIcon;
 
+    @FindBy(xpath = "//div[@id='nav-flyout-ya-signin']//span[@class='nav-action-inner'][normalize-space()='Sign in']")
+    private WebElement signInIcon;
+
     public void clickOnHelloSignInAccount(){
-        click(helloSignInAccount,"Clicking on hello Sign In Account link");
+        doubleClick(helloSignInAccount,"Clicking on hello Sign In Account link");
+    }
+
+    public void moveToHelloSignInAccount(){
+        hoverOverAElement(helloSignInAccount);
     }
 
     public void clickOnCartIcon(){
-        click(cartIcon,"Clicking on cart Icon");
+        doubleClick(cartIcon,"Clicking on cart Icon");
+    }
+
+    public void clickOnSignInIcon(){
+        clickOnElementUsingJS(signInIcon);
+    }
+
+    public void moveToSignInButton(){
+        hoverOverAElement(signInIcon);
     }
 
 }

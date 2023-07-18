@@ -3,8 +3,10 @@ package org.selenium.amazon.utils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.selenium.amazon.driverutils.Driver;
@@ -31,8 +33,14 @@ public class PageUtility {
 
     public void click(WebElement webElement, String msg){
         waitForVisibility(webElement);
-        LOGGER.info("Clicking on element : {}",webElement);
+        LOGGER.info(msg);
         click(webElement);
+    }
+
+    public void clickOnElementUsingJS(WebElement element){
+        waitForVisibility(element);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click();", element);
     }
 
     public String getText(WebElement webElement){
@@ -41,7 +49,7 @@ public class PageUtility {
     }
 
     public void waitForVisibility(WebElement webElement){
-        wait.until(ExpectedConditions.visibilityOf( webElement));
+        wait.until(ExpectedConditions.visibilityOf(webElement));
     }
 
     public WebElement getElementByLocator(Locators locators, String locatorValue){
@@ -109,11 +117,12 @@ public class PageUtility {
         webElement.sendKeys(text);
     }
 
-    public void doubleClick(WebElement webElement){
+    public void doubleClick(WebElement webElement, String msg){
+        LOGGER.info(msg);
         waitForVisibility(webElement);
         click(webElement);
         try {
-            click(webElement);
+            clickOnElementUsingJS(webElement);
         }catch (Exception e){
             e.getMessage();
         }
@@ -122,5 +131,12 @@ public class PageUtility {
     public void clear(WebElement webElement){
         waitForVisibility(webElement);
         webElement.clear();
+    }
+
+    public void hoverOverAElement(WebElement element){
+        waitForVisibility(element);
+        Actions actions = new Actions(driver);
+        LOGGER.info("Moving to element {}",element);
+        actions.moveToElement(element).perform();
     }
 }

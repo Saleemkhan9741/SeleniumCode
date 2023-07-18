@@ -12,10 +12,10 @@ public class EmailOrPhoneLoginPage extends PageInitializer{
     private WebElement continueButton;
 
     public void enteringMobileOrEmailId(String emailId){
-        sendKeys(enterMobileOrPhoneTextField,"entering "+emailId+" ");
+        sendKeys(enterMobileOrPhoneTextField,emailId);
     }
 
     public void clickOnContinueButton(){
-        click(continueButton,"clicking on continue button");
+        doubleClick(continueButton,"clicking on continue button");
     }
 }

@@ -16,6 +16,6 @@ public class PasswordLoginPage extends PageInitializer{
     }
 
     public void clickOnSignInButton(){
-        click(signInButton,"Clicking on Sign In Button");
+        doubleClick(signInButton,"Clicking on Sign In Button");
     }
 }
