@@ -1,12 +1,9 @@
 package org.selenium.hyrtutorials.frames;
 
-import com.beust.ah.A;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.selenium.amazon.driverutils.Driver;
+import org.selenium.amazon.utils.PageUtility;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -22,6 +19,8 @@ public class SwitchToParticularTab {
         WebElement menLink = currentDriver.findElement(By.xpath("//a[@title='MEN']"));
         WebElement womenLink = currentDriver.findElement(By.xpath("//a[@title='WOMEN']"));
         WebElement kidsLink = currentDriver.findElement(By.xpath("//a[@title='KIDS']"));
+        new PageUtility().waitTillAlertIsPresent();
+        currentDriver.switchTo().alert().accept();
         Actions actions = new Actions(currentDriver);
         actions.keyDown(Keys.COMMAND).moveToElement(menLink).click().perform();
         actions.keyDown(Keys.COMMAND).moveToElement(womenLink).click().perform();

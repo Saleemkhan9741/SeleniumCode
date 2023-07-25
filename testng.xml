@@ -3,7 +3,7 @@
 <suite name="selenium">
     <groups>
         <run>
-            <include name="smoke"/>
+            <include name="regression"/>
         </run>
     </groups>
     <listeners>

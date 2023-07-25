@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 public class HyrTutorialsTest extends BaseTest {
 
     @Test(groups = {"sanity"})
-    public void practiceFrames() throws InterruptedException {
+    public void practiceFrames() {
         WebDriver currentDriver = Driver.getInstance().getWebdriver();
         HyrTutorials hyrTutorials = new HyrTutorials();
         hyrTutorials.clearParentTextBox();

@@ -139,4 +139,9 @@ public class PageUtility {
         LOGGER.info("Moving to element {}",element);
         actions.moveToElement(element).perform();
     }
+
+    public void waitTillAlertIsPresent(){
+        wait  = new WebDriverWait(driver,Duration.ofSeconds(WAIT));
+        wait.until(ExpectedConditions.alertIsPresent());
+    }
 }
